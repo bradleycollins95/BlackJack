@@ -58,8 +58,8 @@ public class ApplicationMenu {
         System.out.println("\nSelect from the following options:");
         System.out.println("(A) Draw a card");
         System.out.println("(B) Draw a hand of 5 cards");
-        System.out.println("(C) Shuffle Deck");
-        System.out.println("(D) Print Deck");
+        System.out.println("(C) Shuffle");
+        System.out.println("(D) Print out the deck");
         System.out.println("(Q) Quit");
     }
 }
