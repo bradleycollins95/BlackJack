@@ -55,7 +55,7 @@ public class ApplicationMenu {
     }
 
     public static void printMenu () {
-        System.out.println("\n\nSelect from the following options:");
+        System.out.println("\nSelect from the following options:");
         System.out.println("(A) Draw a card");
         System.out.println("(B) Draw a hand of 5 cards");
         System.out.println("(C) Shuffle Deck");
