@@ -1,29 +1,53 @@
-import java.util.*;
+import java.util.Random;
 
+/**
+ * A class that generates a random card
+ * Calls from the PlayingCard class
+ * <pre>
+ * b) Create a class called “PlayingCardFactory” that has the following methods:
+ * - Generate Random Card (static)
+ * - Generate Random Card from a suit (static)
+ * </pre>
+ * @author 20108508
+ *</pre>
+ */
 public class PlayingCardFactory {
-
     /**
-     * Generate a random playing card for testing purpose
-     * @return Playing Card
+     * Generate a random playing card.
+     * @return new playing card
      */
-    private static final int facesLength = PlayingCard.CardFace.values().length;           // length of card enum = 13
-    private static final int suitsLength = PlayingCard.Suit.values().length;               // length of card suits enum = 4
-    public static PlayingCard generatePlayingCard() {
-        Random random = new Random ();                                                     // random number
-        return new PlayingCard(PlayingCard.CardFace.values()[random.nextInt(facesLength)], // random value in enum CardFace for the face value
-                PlayingCard.Suit.values()[random.nextInt(suitsLength)]);                   // random value in Suit enum for the suit value
+    public static PlayingCard generatePlayingCard(){
+        Random rand = new Random();
+        int random = rand.nextInt(1, 14);
+        final int randomSuit = rand.nextInt(4);
+        if (randomSuit == 0) {
+            return new PlayingCard(PlayingCard.Suit.CLUBS, random);
+        } else if (randomSuit == 1){
+            return new PlayingCard(PlayingCard.Suit.DIAMONDS, random);
+        } else if (randomSuit == 2){
+            return new PlayingCard(PlayingCard.Suit.HEARTS, random);
+        } else {
+            return new PlayingCard(PlayingCard.Suit.SPADES, random);
+        }
     }
 
     /**
-     * Core method of systems to yield a random American playing card for the
-     * standard 52 cards in a deck.
-     * @param suit
-     * @return
+     * Generates random card from Suit of choice
+     * @param suit - card suit
+     * @return new PlayingCard
      */
-    public static PlayingCard generatePlayingCardFromSuit(PlayingCard.Suit suit) {
-        Random random = new Random ();
-        return new PlayingCard(PlayingCard.CardFace.values()[random.nextInt(facesLength)], // random value in enum CardFace for the face value
-                suit);                                                                     // parameter suit for suit choice
-    }
+    public static PlayingCard generatePlayingCardSuit(PlayingCard.Suit suit){
+        Random rand = new Random();
+        int random = rand.nextInt(1, 14);
 
+        if (PlayingCard.Suit.CLUBS == suit) {
+            return new PlayingCard(PlayingCard.Suit.CLUBS, random);
+        } else if (PlayingCard.Suit.DIAMONDS == suit){
+            return new PlayingCard(PlayingCard.Suit.DIAMONDS, random);
+        } else if (PlayingCard.Suit.HEARTS == suit){
+            return new PlayingCard(PlayingCard.Suit.HEARTS, random);
+        } else {
+            return new PlayingCard(PlayingCard.Suit.SPADES, random);
+        }
+    }
 }
