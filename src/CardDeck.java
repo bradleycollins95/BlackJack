@@ -4,23 +4,11 @@ import java.util.Collections;
 /**
  * Class that creates a deck of playing cards using an ArrayList
  * Includes methods to shuffle and draw from the deck
- * <pre>
- * c) Create a class called ‘CardDeck’ that has the following methods:
- * - Has an ArrayList of Playing cards
- * - Starts with a full deck of cards
- * - Can be shuffled
- * - Can draw a card
- * - Create an application with a menu that lets you:
- *  a) draw a card
- *  b) draw a hand
- *  c) print the deck
- *  d) shuffle the deck
- *  e) print out the deck
+ *
  * @author 20108508
- * </pre>
  */
 public class CardDeck {
-    private ArrayList<PlayingCard> deck;
+    private final ArrayList<PlayingCard> deck;
     public CardDeck(ArrayList<PlayingCard> deck) {
         this.deck = new ArrayList<>();
         this.makeDeck();
@@ -29,9 +17,8 @@ public class CardDeck {
     /**
      * Adds cards into the deck.
      * 13 cards in each of the 4 suits.
-     * @return nothing
      */
-    private PlayingCard makeDeck(){
+    public void makeDeck(){
         for (int i = 0; i < 4; i++) {
             if(i == 0){
                 //Adds cards in the deck in order from 1-13
@@ -55,7 +42,6 @@ public class CardDeck {
                 }
             }
         }
-        return null;
     }
 
     /**
@@ -73,9 +59,28 @@ public class CardDeck {
         return deck.remove(0);
     }
 
+    /**
+     * Checks to see if the card deck has any cards left
+     * @return the number of cards left
+     */
+
     public void printDeck(){
         for (PlayingCard card: this.deck) {
             System.out.printf("%s ", card.toString());
         }
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < deck.size(); i++) {
+            sb.append(i + 1);
+            sb.append('/');
+            sb.append(deck.size());
+            sb.append(' ');
+            sb.append(deck.get(i));
+            sb.append('\n');
+        }
+        return sb.toString();
     }
 }

@@ -4,22 +4,18 @@
  * Playing Cards are not meant to be initialized themselves, they should be generated as part of a complete Deck of
  * cards VIA a factory object
  * NOTE: There are no joker or other cards included as part of this class
- * <pre>
  * REQUIREMENTS
- * a) Create a class called ‘PlayingCard’ that does the following:
+ * Create a class called ‘PlayingCard’ that does the following:
  * - Has a constructor which creates the card - it should have a valid suit and a value.
  * - You should have getters only for these values.
  * - Note: use constants for suits and think of how you can constrain the value.
  *   (Hint: You can use constants or enums.)
  * - Override the toString method to print the playing card like “8 ♣” or “K ♦” (static).
  *   (Hint: google ‘unicode character for diamond’)
- *
- * - Bonus: Print an ASCII Art version of the Card to the a print screen like the following:
- *          printAsciiCard(PlayingCard playingCard, PrintStream printStream)
- * </pre>
+ * - Bonus: Print an ASCII Art version of the Card to the print screen like the following:
+ *          printAsciiCard(PlayingCard playingCard, PrintStream)
  *
  * @author 20108508
- * <p>
  * A class that creates a playing card
  */
 public record PlayingCard(PlayingCard.Suit suit, int faceValue){

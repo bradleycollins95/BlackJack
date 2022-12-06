@@ -3,13 +3,8 @@ import java.util.Random;
 /**
  * A class that generates a random card
  * Calls from the PlayingCard class
- * <pre>
- * b) Create a class called “PlayingCardFactory” that has the following methods:
- * - Generate Random Card (static)
- * - Generate Random Card from a suit (static)
- * </pre>
+ *
  * @author 20108508
- *</pre>
  */
 public class PlayingCardFactory {
     /**

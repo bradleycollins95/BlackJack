@@ -36,7 +36,7 @@ public class ApplicationMenu {
                 System.out.println(card);
             }
             if (c == 'B'){
-                System.out.println("The 5 cards you've been chanced to have:");
+                System.out.println("Here's a hand of 5 cards:");
                 for (int i = 1; i <= 5; i++) {
                     PlayingCard card = deck.drawCards();
                     //Prints drawn cards
@@ -51,6 +51,7 @@ public class ApplicationMenu {
                 deck.printDeck();
             }
         }
+        //quit application
         while (c != 'Q');
     }
 
